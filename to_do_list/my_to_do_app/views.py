@@ -9,14 +9,23 @@ from django.urls import reverse
 
 
 def index(request):
-    todos = Todo.objects.all()
+    todos = Todo.objects.all()  # db select * from my_to_do_app_todo
     content = {'todos': todos}
     return render(request, 'my_to_do_app/index.html', content)
 
 
 def createTodo(request):
-    user_input_str = request.POST['todoContent']
+    user_input_str = request.POST['todoContent']  # Post 방식으로 실행하므로 request.POST
     new_todo = Todo(content=user_input_str)
     new_todo.save()  # db insert
     return HttpResponseRedirect(reverse('index'))
-    #return HttpResponse("createTodo 를 할겅! =>" + user_input_str)
+    # return HttpResponse("createTodo 를 할겅! =>" + user_input_str)
+
+
+def deleteTodo(request):
+    user_delete_str_id = request.GET['todoNum']  # Get 방식으로 실행하므로 request.GET
+    # new_todo = Todo(id=user_delete_str_id)
+    new_todo = Todo.objects.get(id=user_delete_str_id)
+    new_todo.delete()  # db delete
+
+    return HttpResponseRedirect(reverse('index'))
