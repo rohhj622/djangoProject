@@ -9,3 +9,4 @@ Django 한그릇 뚝딱을 참고하여 진행합니다*
 - CRD 기능을 갖춤
 - app을 여러개로 두는 이유 : 유지보수를 위함
 - get, post에 따라 request.GET, request.POST 달라짐
+- 20.8.20 
