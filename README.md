@@ -1,7 +1,7 @@
 # djangoProject
 
-django framework 를 사용하여 만든 여러가지 프로젝트들
-> 
+**django framework 를 사용하여 만든 여러가지 프로젝트, 
+Django 한그릇 뚝딱을 참고하여 진행합니다**
 
 ### to_do_list
 > db : sqlite3
