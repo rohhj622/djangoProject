@@ -22,10 +22,24 @@ def createTodo(request):
     # return HttpResponse("createTodo 를 할겅! =>" + user_input_str)
 
 
-def deleteTodo(request):
-    user_delete_str_id = request.GET['todoNum']  # Get 방식으로 실행하므로 request.GET
-    # new_todo = Todo(id=user_delete_str_id)
-    new_todo = Todo.objects.get(id=user_delete_str_id)
-    new_todo.delete()  # db delete
+# db엔 남기기
+def doneTodo(request):
+    user_done_str_id = request.GET['todoNum']  # Get 방식으로 실행하므로 request.GET
+    # new_todo = Todo(id=user_done_str_id)
+    new_todo = Todo.objects.get(id=user_done_str_id)
+    new_todo.isDone = True
+    new_todo.save()
 
     return HttpResponseRedirect(reverse('index'))
+
+
+
+# 단순 삭제
+
+# def deleteTodo(request):
+#     user_delete_str_id = request.GET['todoNum']  # Get 방식으로 실행하므로 request.GET
+#     # new_todo = Todo(id=user_delete_str_id)
+#     new_todo = Todo.objects.get(id=user_delete_str_id)
+#     new_todo.delete()  # db delete
+#
+#     return HttpResponseRedirect(reverse('index'))
