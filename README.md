@@ -5,8 +5,8 @@ Django 한그릇 뚝딱을 참고하여 진행합니다*
 
 ### 1. to_do_list
 > db : sqlite3
-- 모든 할 일 열람 select *, 할 일  insert, 완료 시 delete
+- 모든 할 일 열람 select * --> isDone = False(0) 이면 열람, 할 일  insert, 완료 시 delete --> isDone = True(1) update
 - CRD 기능을 갖춤
 - app을 여러개로 두는 이유 : 유지보수를 위함
 - get, post에 따라 request.GET, request.POST 달라짐
-- 20.8.20 
+- 20.8.21
