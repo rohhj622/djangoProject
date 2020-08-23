@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class SendmailConfig(AppConfig):
-    name = 'sendMail'
+    name = 'sendEmail'
