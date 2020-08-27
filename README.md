@@ -10,3 +10,7 @@ Django 한그릇 뚝딱을 참고하여 진행합니다*
 - app을 여러개로 두는 이유 : 유지보수를 위함
 - get, post에 따라 request.GET, request.POST 달라짐
 - 20.8.21
+
+### 2. RestaurantShare
+> db : sqlite3
+- app을 생성하면 잊지말고 setting.py에 추가하기 : 그렇지 않으면 templates 파일을 읽지 못 함.
